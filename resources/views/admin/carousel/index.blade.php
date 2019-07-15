@@ -58,6 +58,7 @@
             ]);
 
         $("#add").on('click',function () {
+            window.location.href = "{{ route('admin.carousel.add') }}"
         })
     </script>
 @stop

@@ -18,7 +18,8 @@ class CreateCarouselsTable extends Migration
             $table->dateTime('create_date');
             $table->string('remark');
             $table->string('title',400);
-            $table->text('body');
+            $table->text('content');
+            $table->Integer('sort');
             $table->timestamps();
         });
     }

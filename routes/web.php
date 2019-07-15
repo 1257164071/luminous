@@ -29,5 +29,8 @@ Route::group(['namespace' => 'Admin'], function (){
     Route::get('/admin/carousel','CarouselController@index')->name('admin.carousel');
     Route::post('/admin/carousel','CarouselController@list')->name('admin.carousel');
 
+    Route::get("/admin/carousel/add", 'CarouselController@carousel_add')->name('admin.carousel.add');
+    Route::post("/admin/carousel/add", 'CarouselController@carousel_form')->name('admin.carousel.add');
+
 });
 
