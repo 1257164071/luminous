@@ -22,7 +22,8 @@ Route::group(['namespace' => 'Index'], function (){
 
 Route::group(['namespace' => 'Admin'], function (){
     Route::get('/admin','IndexController@index')->name('admin.home');
-
+    Route::get('/admin/login', 'SessionsController@create')->name('login');
+    Route::post('/admin/login', 'SessionsController@store')->name('login');
+    Route::delete('/admin/logout', 'SessionsController@destroy')->name('logout');
 });
-
 

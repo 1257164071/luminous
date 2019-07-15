@@ -14,22 +14,54 @@ const mix = require('laravel-mix');
 mix.js('resources/js/app.js', 'public/js')
     .sass('resources/sass/app.scss', 'public/css');
 
-mix.script([
 
-    "public/static/js/jquery.js",
-    "public/static/js/appear.js",
-    "public/static/js/bootstrap.bundle.min.js",
-    "public/static/js/bootstrap-select.min.js",
-    "public/static/js/isotope.js",
-    "public/static/js/jquery.bootstrap-touchspin.js",
-    "public/static/js/jquery.countto.js",
-    "public/static/js/jquery.easing.min.js",
-    "public/static/js/jquery.enllax.min.js",
-    "public/static/js/jquery.fancybox.js",
-    "public/static/js/jquery.mixitup.min.js",
-    "public/static/js/jquery.paroller.min.js",
-    "public/static/js/owl.js",
-    "public/static/js/validation.js",
-    "public/static/js/wow.js",
+mix.scripts([
+    'public/js/jquery.min.js',
+    'public/js/bootstrap.min.js',
+    'public/js/plugins/metisMenu/jquery.metisMenu.js',
+    'public/js/plugins/slimscroll/jquery.slimscroll.min.js',
+    'public/js/plugins/layer/layer.min.js',
+    'public/js/hplus.js',
+    'public/js/contabs.js',
+    'public/js/plugins/pace/pace.min.js',
+    'public/js/plugins/toastr/toastr.min.js',
+], 'public/js/all.js');
 
-], 'public/js/base.js');
+
+mix.styles([
+    'public/css/bootstrap.min.css',
+    'public/css/font-awesome.min.css',
+    'public/css/animate.css',
+    'public/css/style.css',
+    'public/css/plugins/toastr/toastr.min.css'
+], 'public/css/all.css');
+
+mix.scripts([
+    'public/js/jquery.min.js',
+    'public/js/bootstrap.min.js',
+    'public/js/plugins/toastr/toastr.min.js',
+    'public/js/plugins/bootstrap-table/bootstrap-table.min.js',
+    'public/js/plugins/bootstrap-table/bootstrap-table-mobile.min.js',
+    'public/js/plugins/bootstrap-table/locale/bootstrap-table-zh-CN.min.js',
+    'public/js/plugins/layer/layer.min.js',
+], 'public/js/content.js');
+
+mix.styles([
+    'public/css/bootstrap.min.css',
+    'public/css/font-awesome.css',
+    'public/css/plugins/bootstrap-table/bootstrap-table.min.css',
+    'public/css/animate.css',
+    'public/css/style.css',
+
+], 'public/css/content.css');
+
+mix.scripts([
+    'public/js/jquery.min.js',
+    'public/js/bootstrap.min.js',
+    'public/js/plugins/jsTree/jstree.min.js',
+], 'public/js/child.js');
+
+mix.styles([
+    'public/css/bootstrap.min.css',
+    'public/css/plugins/jsTree/style.min.css'
+], 'public/css/child.css');
