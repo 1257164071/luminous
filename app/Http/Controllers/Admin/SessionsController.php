@@ -25,7 +25,7 @@ class SessionsController extends Controller
         if(Auth::attempt($credentials))
         {
             session()->flash('success','登录成功');
-            return redirect('/');
+            return redirect('admin');
         }else{
             session()->flash('danger',"很抱歉，您的用户名和密码不匹配");
             return redirect()->back()->withInput();
