@@ -13,4 +13,10 @@ class CarouselController extends Controller
     {
         return view('admin.carousel.index');
     }
+
+    public function list()
+    {
+
+
+    }
 }
