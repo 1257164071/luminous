@@ -35,8 +35,6 @@
     <script src="{{ mix('js/all.js') }}"></script>
     <script src="{{ mix('js/app.js') }}"></script>
 
-@include('shared._errors')
-@include('shared._message')
 
 </body>
 

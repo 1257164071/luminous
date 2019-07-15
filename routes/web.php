@@ -25,5 +25,9 @@ Route::group(['namespace' => 'Admin'], function (){
     Route::get('/admin/login', 'SessionsController@create')->name('login');
     Route::post('/admin/login', 'SessionsController@store')->name('login');
     Route::delete('/admin/logout', 'SessionsController@destroy')->name('logout');
+
+    Route::get('/admin/carousel','CarouselController@index')->name('admin.carousel');
+    Route::post('/admin/carousel','CarouselController@create')->name('admin.carousel');
+
 });
 
