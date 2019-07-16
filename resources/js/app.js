@@ -29,12 +29,13 @@
 // });
 
 window.penguin = {};
-window.penguin.TableRun = function (TableElement, url, columns, sidePagination = 'client') {
+window.penguin.TableRun = function (TableElement, url, columns, queryParams, sidePagination = 'client') {
 
     TableElement.bootstrapTable({
         url: url,
         search: true,
         pagination: true,
+        queryParams:queryParams,
         showRefresh: true,
         showToggle: true,
         showColumns: true,

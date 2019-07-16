@@ -16,10 +16,11 @@ class CreateCarouselsTable extends Migration
         Schema::create('carousels', function (Blueprint $table) {
             $table->Increments('id');
             $table->dateTime('create_date');
-            $table->string('remark');
-            $table->string('title',400);
-            $table->text('content');
-            $table->Integer('sort');
+            $table->string('remark')->nullable();
+            $table->string('title',400)->nullable();
+            $table->text('content')->nullable();
+            $table->Integer('sort')->nullable();
+            $table->string('path')->nullable();
             $table->timestamps();
         });
     }

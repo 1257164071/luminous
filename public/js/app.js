@@ -124,12 +124,13 @@
 // });
 window.penguin = {};
 
-window.penguin.TableRun = function (TableElement, url, columns) {
-  var sidePagination = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : 'client';
+window.penguin.TableRun = function (TableElement, url, columns, queryParams) {
+  var sidePagination = arguments.length > 4 && arguments[4] !== undefined ? arguments[4] : 'client';
   TableElement.bootstrapTable({
     url: url,
     search: true,
     pagination: true,
+    queryParams: queryParams,
     showRefresh: true,
     showToggle: true,
     showColumns: true,

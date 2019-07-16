@@ -15,12 +15,11 @@
             <div class="panel-body">
 
                 <div>
-                    <form action="{{ route('admin.carousel.add') }}" method="POST">
-
+                    <form action="{{ route('admin.carousel.add') }}" method="POST" enctype="multipart/form-data">
+                        {{ csrf_field() }}
                         <div class="form-group">
                             <label for="remark">备注:</label>
-                            <input type="text" class="form-control" id="remark" name="remark"
-                                   value="{{ old('remark') }}">
+                            <input type="text" class="form-control" id="remark" name="remark" value="{{ old('remark') }}">
                         </div>
                         <div class="form-group">
                             <label for="sort">位置排序</label>
@@ -34,7 +33,7 @@
                                     <button type="button" class="btn btn-primary" id="image">选择图片</button>
                                 </span>
                             </div>
-                            <input type="file" id="file" style="display: none" accept=".jpg,.png">
+                            <input type="file" id="file" style="display: none" name="img_file" accept=".jpg,.png">
                         </div>
                         <div class="form-group">
                             <label for="title">轮播标题:</label>
@@ -60,14 +59,14 @@
 
 @section('script')
     <script>
-        $("#back").on('click', function () {
+        $("#back").on('click', function (){
             window.location.href = "{{ route('admin.carousel') }}";
         });
-        $("#image").on('click', function () {
+        $("#image").on('click', function (){
             $("#file").click();
         });
         $("#file").on('change', function(){
-            var file = $("#file").val()
+            var file = $("#file").val();
             var fileName = file.split("\\").pop();
             $("#image_path").val(fileName)
         });

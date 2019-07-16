@@ -34,13 +34,18 @@
                     title: 'ID',
                     width: '100px',
                     align: 'center',
+                },{
+                    field: 'sort',
+                    title: '排序',
+                    align: 'center',
+                    width: '100px',
                 }, {
                     field: 'remark',
                     title: '备注',
                     align: 'center',
                     width: '200px',
                 }, {
-                    field: 'date',
+                    field: 'create_date',
                     title: '创建时间',
                     align: 'center',
                 }, {
@@ -55,9 +60,22 @@
                         ].join('  ')
                     } //自定义方法，添加操作按钮
                 },
-            ]);
+            ],
+            function () {
+                return {
+                    // // limit: params.limit,   //页面大小
+                    // offset: params.offset,  //页码
+                    // pageSize: this.pageSize,
+                    // pageNumber: this.pageNumber,
+                    // projectId: $("#projectId").val(),
+                    // requirement_Id: $("#requirement_Id").val(),
+                    // length: 6
+                    '_token' : "{{ csrf_token() }}",
+                };
+            }
+        );
 
-        $("#add").on('click',function () {
+        $("#add").on('click', function () {
             window.location.href = "{{ route('admin.carousel.add') }}"
         })
     </script>
