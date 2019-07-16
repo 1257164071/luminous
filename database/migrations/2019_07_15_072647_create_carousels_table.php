@@ -18,7 +18,7 @@ class CreateCarouselsTable extends Migration
             $table->dateTime('create_date');
             $table->string('remark')->nullable();
             $table->string('title',400)->nullable();
-            $table->text('content')->nullable();
+            $table->text('carousel_content')->nullable();
             $table->Integer('sort')->nullable();
             $table->string('path')->nullable();
             $table->timestamps();

@@ -15,15 +15,15 @@
             <div class="panel-body">
 
                 <div>
-                    <form action="{{ route('admin.carousel.add') }}" method="POST" enctype="multipart/form-data">
+                    <form action="{{ route('admin.carousel.edit' ,[$carousel]) }}" method="POST" enctype="multipart/form-data">
                         {{ csrf_field() }}
                         <div class="form-group">
                             <label for="remark">备注:</label>
-                            <input type="text" class="form-control" id="remark" name="remark" value="{{ old('remark') }}">
+                            <input type="text" class="form-control" id="remark" name="remark" value="{{ $carousel->remark }}">
                         </div>
                         <div class="form-group">
                             <label for="sort">位置排序</label>
-                            <input type="text" class="form-control" id="sort" name="sort" value="100">
+                            <input type="text" class="form-control" id="sort" name="sort" value="{{ $carousel->sort }}">
                         </div>
                         <div class="form-group">
                             <label for="image">上传图片(1920*820)</label>
@@ -37,11 +37,11 @@
                         </div>
                         <div class="form-group">
                             <label for="title">轮播标题:</label>
-                            <input type="text" class="form-control" id="title" name="title" value="{{ old('title') }}">
+                            <input type="text" class="form-control" id="title" name="title" value="{{ $carousel->title }}">
                         </div>
                         <div class="form-group">
                             <label for="content">轮播内容</label>
-                            <textarea class="form-control" id="content" name="carousel_content">{{ old('carousel_content') }}</textarea>
+                            <textarea class="form-control" id="content" name="content">{{ $carousel->carousel_content }}</textarea>
                         </div>
 
                             <button type="button" class="btn btn-primary pull-right" id="back">返回</button>

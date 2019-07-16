@@ -52,6 +52,7 @@ mix.styles([
     'public/css/plugins/bootstrap-table/bootstrap-table.min.css',
     'public/css/animate.css',
     'public/css/style.css',
+    'public/css/plugins/toastr/toastr.min.css'
 
 ], 'public/css/content.css');
 

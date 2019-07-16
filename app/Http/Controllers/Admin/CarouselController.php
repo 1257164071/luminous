@@ -53,7 +53,7 @@ class CarouselController extends Controller
 
         $carousel = Carousel::create([
             'title'     =>  $request->title,
-            'content'   =>  $request->get('content'),
+            'carousel_content'   =>  $request->carousel_content,
             'sort'      =>  $request->sort,
             'create_date'   =>  date('Y-m-d H:i:s'),
             'path'      =>  $path,
@@ -62,5 +62,10 @@ class CarouselController extends Controller
 
         session()->flash('success', '添加成功');
         return redirect()->route('admin.carousel');
+    }
+
+    public function edit(Carousel $carousel){
+
+        return view('admin.carousel.edit',compact('carousel'));
     }
 }

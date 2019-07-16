@@ -7,6 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 class Carousel extends Model
 {
     //
-    protected $fillable = ['remark','title','sort','create_date','path','remark'];
+    protected $fillable = ['remark','title','sort','create_date','path','remark','carousel_content'];
 
 }

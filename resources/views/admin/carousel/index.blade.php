@@ -57,7 +57,7 @@
                         var value = row;
                         return [
                             '<button class="btn btn-outline btn-default" onclick="location_img(\''+row.path+'\')">浏览</button>',
-                            '<button class="btn btn-outline btn-default" onclick="">编辑</button>',
+                            '<button class="btn btn-outline btn-default" onclick="edit(\''+row.id+'\')">编辑</button>',
                             '<button class="btn btn-outline btn-danger">删除</button>',
                         ].join('  ')
                     } //自定义方法，添加操作按钮
@@ -79,12 +79,14 @@
 
         $("#add").on('click', function () {
             window.location.href = "{{ route('admin.carousel.add') }}"
-        })
+        });
         function location_img(path) {
             window.penguin.imgView(path);
         }
 
-
+        function edit(id) {
+            window.location.href = "{{ route('admin.home')}}" + '/carousel/' + id + "/edit";
+        }
 
     </script>
 @stop
