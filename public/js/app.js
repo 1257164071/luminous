@@ -188,6 +188,27 @@ window.penguin.layWindows = function (url) {
   });
 };
 
+window.penguin.imgView = function (path) {
+  if (path == null) {
+    return false;
+  }
+
+  var img = new Image();
+  img.src = path;
+  var imgHtml = "<img src='" + path + "' />"; //捕获页
+
+  layer.open({
+    type: 1,
+    shade: false,
+    title: false,
+    //不显示标题
+    //area:['600px','500px'],
+    area: [img.width + 'px', img.height + 'px'],
+    content: imgHtml,
+    cancel: function cancel() {}
+  });
+};
+
 /***/ }),
 
 /***/ "./resources/sass/app.scss":

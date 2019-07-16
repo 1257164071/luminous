@@ -35,7 +35,7 @@ window.penguin.TableRun = function (TableElement, url, columns, queryParams, sid
         url: url,
         search: true,
         pagination: true,
-        queryParams:queryParams,
+        queryParams: queryParams,
         showRefresh: true,
         showToggle: true,
         showColumns: true,
@@ -72,7 +72,7 @@ window.penguin.toastrSet = function () {
     };
 
 };
-window.penguin.layWindows = function (url, title = '增加', submitFun ,size = ['500px', '600px']) {
+window.penguin.layWindows = function (url, title = '增加', submitFun, size = ['500px', '600px']) {
     parent.layer.open({
         type: 2,
         title: title,
@@ -90,4 +90,24 @@ window.penguin.layWindows = function (url, title = '增加', submitFun ,size = [
 
         }
     });
-}
+};
+
+window.penguin.imgView = function (path) {
+    if(path == null){
+        return false;
+    }
+    var img = new Image();
+    img.src = path;
+    var imgHtml = "<img src='" + path + "' />";
+    //捕获页
+    layer.open({
+        type: 1,
+        shade: false,
+        title: false, //不显示标题
+        //area:['600px','500px'],
+        area: [img.width + 'px', img.height + 'px'],
+        content: imgHtml,
+        cancel: function () {
+        }
+    });
+};

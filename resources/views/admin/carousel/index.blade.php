@@ -52,9 +52,11 @@
                     field: 'operate',
                     title: '操作',
                     align: 'center',
-                    width: '200px',
+                    width: '300px',
                     formatter: function (value, row, index) {
+                        var value = row;
                         return [
+                            '<button class="btn btn-outline btn-default" onclick="location_img(\''+row.path+'\')">浏览</button>',
                             '<button class="btn btn-outline btn-default" onclick="">编辑</button>',
                             '<button class="btn btn-outline btn-danger">删除</button>',
                         ].join('  ')
@@ -78,5 +80,11 @@
         $("#add").on('click', function () {
             window.location.href = "{{ route('admin.carousel.add') }}"
         })
+        function location_img(path) {
+            window.penguin.imgView(path);
+        }
+
+
+
     </script>
 @stop
