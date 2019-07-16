@@ -10,13 +10,14 @@
     <div class="container col-md-12">
         <div class="panel panel-default">
             <div class="panel-heading">
-                添加轮播
+                修改轮播
             </div>
             <div class="panel-body">
 
                 <div>
-                    <form action="{{ route('admin.carousel.edit' ,[$carousel]) }}" method="POST" enctype="multipart/form-data">
+                    <form action="{{ route('admin.carousel.update' ,$carousel->id) }}" method="POST" enctype="multipart/form-data">
                         {{ csrf_field() }}
+                        {{ method_field('PATCH') }}
                         <div class="form-group">
                             <label for="remark">备注:</label>
                             <input type="text" class="form-control" id="remark" name="remark" value="{{ $carousel->remark }}">
@@ -45,7 +46,7 @@
                         </div>
 
                             <button type="button" class="btn btn-primary pull-right" id="back">返回</button>
-                            <button type="submit" class="btn btn-primary pull-right">提交</button>
+                            <button type="submit" class="btn btn-primary pull-right">保存</button>
                     </form>
 
                 </div>

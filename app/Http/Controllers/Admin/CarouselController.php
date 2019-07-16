@@ -68,4 +68,42 @@ class CarouselController extends Controller
 
         return view('admin.carousel.edit',compact('carousel'));
     }
+
+    public function update(Carousel $carousel,Request $request){
+        $this->validate($request, [
+            'remark'    =>  'max:191',
+            'title'     =>  'max:400',
+        ]);
+        $file = $request->file('img_file');
+        $path = '';
+        if($file != null){
+
+            $ext = $file->getClientOriginalExtension();
+            $realPath = $file->getRealPath();
+            $filename = date('Y-m-d-H-i-s') . '-' . uniqid() . '.' . $ext;
+            $bool = Storage::disk('public')->put($filename, file_get_contents($realPath));
+            if($bool == true){
+                $path = "/storage/".$filename;
+            }
+        }
+
+        $data = [];
+        if($path != ''){
+            $data['path'] = $request->path;
+        }
+        $data['title'] = $request->title;
+        $data['carousel_content'] = $request->carousel_content;
+        $data['sort']   =   $request->sort;
+        $data['remark'] =   $request->remark;
+        $carousel->update($data);
+        session()->flash('success', '更新成功');
+        return redirect()->route('admin.carousel');
+    }
+
+    public function destroy(Carousel $carousel)
+    {
+        $carousel->delete();
+        session()->flash('success', '已被成功删除！');
+        return redirect()->route('admin.carousel');
+    }
 }

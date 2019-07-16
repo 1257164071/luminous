@@ -58,7 +58,7 @@
                         return [
                             '<button class="btn btn-outline btn-default" onclick="location_img(\''+row.path+'\')">浏览</button>',
                             '<button class="btn btn-outline btn-default" onclick="edit(\''+row.id+'\')">编辑</button>',
-                            '<button class="btn btn-outline btn-danger">删除</button>',
+                            '<button class="btn btn-outline btn-danger" onclick="del(\''+row.id+'\')">删除</button>',
                         ].join('  ')
                     } //自定义方法，添加操作按钮
                 },
@@ -87,6 +87,11 @@
         function edit(id) {
             window.location.href = "{{ route('admin.home')}}" + '/carousel/' + id + "/edit";
         }
+        function del(id) {
+            if(confirm('是否删除')){
+                window.location.href =  "{{ route('admin.home')}}" + '/carousel/' + id + "/destroy";
+            }
 
+        }
     </script>
 @stop

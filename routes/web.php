@@ -33,5 +33,9 @@ Route::group(['namespace' => 'Admin'], function (){
     Route::post("/admin/carousel/add", 'CarouselController@carousel_form')->name('admin.carousel.add');
 
     Route::get("/admin/carousel/{carousel}/edit/",'CarouselController@edit')->name('admin.carousel.edit');
+
+    Route::patch('/admin/carousel/{carousel}', 'CarouselController@update')->name('admin.carousel.update');
+    Route::get('/admin/carousel/{carousel}/destroy/', 'CarouselController@destroy')->name('admin.carousel.destroy');
+
 });
 
