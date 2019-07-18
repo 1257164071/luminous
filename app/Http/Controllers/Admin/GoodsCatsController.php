@@ -42,6 +42,23 @@ class GoodsCatsController extends Controller
 
     }
 
+    public function edit(GoodsCat $goodsCat)
+    {
+        return view('admin.goodscats.edit', compact('goodsCat'));
+    }
+
+    public function update(GoodsCat $goodsCat, Request $request)
+    {
+        $validate = $this->validate($request,[
+            'sort'  =>  'integer',
+            'goods_cat_name'    =>  'required',
+        ]);
+        $goodsCat->update($validate);
+        session()->flash('success', '修改成功');
+        return redirect()->route('goods_cats.index');
+
+    }
+
     public function destroy(GoodsCat $goodsCat)
     {
         $goodsCat->delete();

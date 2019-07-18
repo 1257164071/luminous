@@ -14,15 +14,16 @@
                 商品分类管理
             </div>
             <div class="panel-body">
-                <form action="{{ route('goods_cats.add') }}" method="POST">
+                <form action="{{ route('goods_cats.update', $goodsCat->id) }}" method="POST">
                     {{ csrf_field()}}
+                    {{ method_field('PATCH') }}
                     <div class="form-group">
                         <label for="remark">类型名称:</label>
-                        <input type="text" class="form-control" id="goods_cat_name" name="goods_cat_name" value="{{ old('goods_cat_name') }}">
+                        <input type="text" class="form-control" id="goods_cat_name" name="goods_cat_name" value="{{ $goodsCat->goods_cat_name }}">
                     </div>
                     <div class="form-group">
                         <label for="sort">位置排序</label>
-                        <input type="text" class="form-control" id="sort" name="sort" value="100">
+                        <input type="text" class="form-control" id="sort" name="sort" value="{{ $goodsCat->sort }}">
                     </div>
                     <button type="button" class="btn btn-primary pull-right" id="back">返回</button>
 

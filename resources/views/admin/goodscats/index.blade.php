@@ -84,7 +84,7 @@
         }
 
         function edit(id) {
-            window.location.href = "{{ route('admin.home')}}" + '/carousel/' + id + "/edit";
+            window.location.href = "{{ route('admin.home')}}" + '/goods_cats/' + id + "/edit";
         }
         function del(id) {
             if(confirm('是否删除')){
