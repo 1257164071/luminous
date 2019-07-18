@@ -28,6 +28,10 @@
                         <a class="J_menuItem" href="{{ route('goods_cats.index') }}"><i class="fa fa-columns"></i> <span class="nav-label">商品分类管理</span></a>
                     </li>
 
+                    <li>
+                        <a class="J_menuItem" href="{{ route('goods.index') }}"><i class="fa fa-columns"></i> <span class="nav-label">商品分类管理</span></a>
+                    </li>
+
                 </ul>
             </div>
         </nav>
