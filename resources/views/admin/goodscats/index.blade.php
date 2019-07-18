@@ -28,7 +28,7 @@
     <script>
         window.penguin.TableRun(
             $("#role_table"),
-            "{{ route('admin.carousel') }}", [
+            "{{ route('goods_cats.index') }}", [
                 {
                     field: 'id',
                     title: 'ID',
@@ -77,7 +77,7 @@
         );
 
         $("#add").on('click', function () {
-            window.location.href = "{{ route('admin.carousel.add') }}"
+            window.location.href = "{{ route('goods_cats.add') }}"
         });
         function location_img(path) {
             window.penguin.imgView(path);

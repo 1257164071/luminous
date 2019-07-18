@@ -20,6 +20,9 @@
 <script src="{{ mix('js/all.js') }}"></script>
 <script src="{{ mix('js/app.js') }}"></script>
 
+@include('admin.shared._errors')
+@include('admin.shared._message')
+
 @yield('script')
 </body>
 

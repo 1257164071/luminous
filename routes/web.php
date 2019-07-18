@@ -35,9 +35,9 @@ Route::group(['namespace' => 'Admin'], function (){
     Route::get('/admin/carousel/{carousel}/destroy/', 'CarouselController@destroy')->name('admin.carousel.destroy');
 
     Route::get('/admin/goods_cats/index', "GoodsCatsController@index")->name('goods_cats.index');
-    Route::post('/admin/goods_cats/index', "GoodsCatsController@index")->name('goods_cats.index');
-    Route::get("/admin/goods_cats/add", 'GoodsCatsController@carousel_add')->name('goods_cats.add');
-    Route::post("/admin/goods_cats/add", 'GoodsCatsController@carousel_form')->name('goods_cats.add');
+    Route::post('/admin/goods_cats/index', "GoodsCatsController@list")->name('goods_cats.index');
+    Route::get("/admin/goods_cats/add", 'GoodsCatsController@add')->name('goods_cats.add');
+    Route::post("/admin/goods_cats/add", 'GoodsCatsController@add_form')->name('goods_cats.add');
     Route::get("/admin/goods_cats/{goods_cats}/edit/",'GoodsCatsController@edit')->name('goods_cats.edit');
     Route::patch('/admin/goods_cats/{goods_cats}', 'GoodsCatsController@update')->name('goods_cats.update');
     Route::get('/admin/goods_cats/{goods_cats}/destroy/', 'GoodsCatsController@destroy')->name('goods_cats.destroy');
