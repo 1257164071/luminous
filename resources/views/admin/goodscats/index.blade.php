@@ -1,11 +1,11 @@
 @extends('admin.layouts.content')
-@section('title','轮播管理')
+@section('title','商品类型管理')
 
 @section('content')
     <div class="col-sm-12">
         <div class="panel panel-default">
             <div class="panel-heading">
-                <h3 class="panel-title">轮播管理</h3>
+                <h3 class="panel-title">商品类型管理</h3>
             </div>
             <div class="panel-body">
                 <div class="example">
@@ -40,8 +40,8 @@
                     align: 'center',
                     width: '100px',
                 }, {
-                    field: 'remark',
-                    title: '备注',
+                    field: 'goods_cat_name',
+                    title: '类型名称',
                     align: 'center',
                     width: '200px',
                 }, {
@@ -56,7 +56,6 @@
                     formatter: function (value, row, index) {
                         var value = row;
                         return [
-                            '<button class="btn btn-outline btn-default" onclick="location_img(\''+row.path+'\')">浏览</button>',
                             '<button class="btn btn-outline btn-default" onclick="edit(\''+row.id+'\')">编辑</button>',
                             '<button class="btn btn-outline btn-danger" onclick="del(\''+row.id+'\')">删除</button>',
                         ].join('  ')
@@ -91,7 +90,6 @@
             if(confirm('是否删除')){
                 window.location.href =  "{{ route('admin.home')}}" + '/carousel/' + id + "/destroy";
             }
-
         }
     </script>
 @stop
