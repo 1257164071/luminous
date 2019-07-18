@@ -42,4 +42,12 @@ class GoodsCatsController extends Controller
 
     }
 
+    public function destroy(GoodsCat $goodsCat)
+    {
+        $goodsCat->delete();
+        session()->flash('success', '删除成功');
+        return redirect()->route('goods_cats.index');
+    }
+
+
 }

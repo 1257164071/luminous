@@ -88,7 +88,7 @@
         }
         function del(id) {
             if(confirm('是否删除')){
-                window.location.href =  "{{ route('admin.home')}}" + '/carousel/' + id + "/destroy";
+                window.location.href =  "{{ route('admin.home')}}" + '/goods_cats/' + id + "/destroy";
             }
         }
     </script>
