@@ -43,11 +43,11 @@
                     field: 'goods_cat_name',
                     title: '类型名称',
                     align: 'center',
-                    width: '200px',
                 }, {
                     field: 'create_date',
                     title: '创建时间',
                     align: 'center',
+                    width: '200px',
                 }, {
                     field: 'operate',
                     title: '操作',
