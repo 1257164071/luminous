@@ -2,7 +2,7 @@
 @section('title','商品管理')
 
 @section('content')
-        <style>
+    <style>
         .btn-primary {
             margin-left: 10px;
         }
@@ -14,15 +14,16 @@
                 商品管理
             </div>
             <div class="panel-body">
-                <form action="{{ route('goods.add') }}" method="POST" enctype="multipart/form-data">
+                <form action="{{ route('goods.update', $goods->id) }}" method="POST" enctype="multipart/form-data">
                     {{ csrf_field()}}
+                    {{ method_field('PATCH') }}
                     <div class="form-group">
                         <label for="remark">商品名称:</label>
-                        <input type="text" class="form-control" id="goods_name" name="goods_name" value="{{ old('goods_name') }}">
+                        <input type="text" class="form-control" id="goods_name" name="goods_name" value="{{ $goods->goods_name }}">
                     </div>
                     <div class="form-group">
                         <label for="goods_stars">星级(根据星级排序)</label>
-                        <select name="goods_stars" id="goods_stars" class="form-control" value="{{ old('goods_stars') }}">
+                        <select name="goods_stars" id="goods_stars" class="form-control" value="{{ $goods->goods_stars }}">
                             <option value="">清选择</option>
                             @for ($i = 1; $i <= 10; $i++)
                                 <option value="{{ $i }}" @if($goods->goods_stars == $i) selected @endif>{{ $i }}星</option>
@@ -32,7 +33,7 @@
 
                     <div class="form-group">
                         <label for="goods_cats_id">商品分类</label>
-                        <select name="goods_cats_id" id="goods_cats_id" class="form-control" value="{{ old('goods_cats_id') }}">
+                        <select name="goods_cats_id" id="goods_cats_id" class="form-control" value="{{ $goods->goods_cats_id }}">
                             <option value="">清选择</option>
                             @foreach($goodsCats as $goodsCat)
                                 <option value="{{ $goodsCat->id }}" @if($goodsCat->id == $goods->goods_cats_id) selected @endif>{{ $goodsCat->goods_cat_name }}</option>
@@ -42,18 +43,18 @@
 
                     <div class="form-group">
                         <label for="goods_index_img">展示图片(372*420)</label>
-                        <input type="text" class="form-control" id="img_name" readonly>
-                        <input type="file" style="display: none" id="goods_index_img" value="清选择" name="goods_index_img" accept=".jpg,.png">
+                        <input type="text" class="form-control" id="img_name" value="清选择" readonly>
+                        <input type="file" style="display: none" id="goods_index_img" name="goods_index_img" accept=".jpg,.png">
                     </div>
 
                     <div class="form-group">
                         <label for="goods_price">价格(单位 $)</label>
-                        <input type="text" class="form-control" id="goods_price" name="goods_price" value="{{ old('goods_price') }}">
+                        <input type="text" class="form-control" id="goods_price" name="goods_price" value="{{ $goods->goods_price }}">
                     </div>
 
                     <div class="form-group">
                         <label for="">商品介绍</label>
-                        <script id="container" name="goods_detail" type="text/plain">
+                        <script id="container" name="goods_detail" type="text/plain">{!! $goods->goods_detail !!}
                         </script>
 
                     </div>

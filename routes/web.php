@@ -46,9 +46,9 @@ Route::group(['namespace' => 'Admin'], function (){
     Route::post('/admin/goods/index', "GoodsController@list")->name('goods.index');
     Route::get("/admin/goods/add", 'GoodsController@add')->name('goods.add');
     Route::post("/admin/goods/add", 'GoodsController@add_form')->name('goods.add');
-    Route::get("/admin/goods/{goods_cat}/edit/",'GoodsController@edit')->name('goods.edit');
-    Route::patch('/admin/goods/{goods_cat}', 'GoodsController@update')->name('goods.update');
-    Route::get('/admin/goods/{goods_cat}/destroy/', 'GoodsController@destroy')->name('goods.destroy');
+    Route::get("/admin/goods/{goods}/edit/",'GoodsController@edit')->name('goods.edit');
+    Route::patch('/admin/goods/{goods}', 'GoodsController@update')->name('goods.update');
+    Route::get('/admin/goods/{goods}/destroy/', 'GoodsController@destroy')->name('goods.destroy');
 
 });
 
