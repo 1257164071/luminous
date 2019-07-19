@@ -57,6 +57,14 @@
                         <label for="goods_price">价格(单位 $)</label>
                         <input type="text" class="form-control" id="goods_price" name="goods_price" value="{{ old('goods_price') }}">
                     </div>
+
+                    <div class="form-group">
+                        <label for="">商品介绍</label>
+                        <script id="container" name="goods_detail" type="text/plain">
+                        </script>
+
+                    </div>
+
                     <button type="button" class="btn btn-primary pull-right" id="back">返回</button>
                     <button class="btn btn-default pull-right" type="submit">提交</button>
                 </form>
@@ -79,6 +87,13 @@
             var file = $("#goods_index_img").val();
             var fileName = file.split("\\").pop();
             $("#img_name").val(fileName)
+        });
+    </script>
+    <script type="text/javascript">
+         var ue = UE.getEditor('container');
+        ue.ready(function () {
+            //此处为支持laravel5 csrf ,根据实际情况修改,目的就是设置 _token 值.
+            ue.execCommand('serverparam', '_token', TOKEN);
         });
     </script>
 

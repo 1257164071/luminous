@@ -9,6 +9,8 @@
     <title>综合管理系统 - @yield('title', '子页面')</title>
     <link rel="stylesheet" href="{{ mix('css/app.css') }}">
     <link rel="stylesheet" href="{{ mix('css/all.css') }}">
+    @include('UEditor::head');
+
 </head>
 
 <body>

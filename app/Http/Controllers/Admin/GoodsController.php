@@ -31,7 +31,7 @@ class GoodsController extends Controller
             'goods_name'    =>  'max:191|required',
             'goods_stars'   =>  'max:11',
             'goods_cats_id' =>  'required',
-            'goods_price'   =>  'max:8|integer|nullable',
+            'goods_price'   =>  'max:1000000',
             'goods_detail'  =>  'string|nullable',
         ]);
 
