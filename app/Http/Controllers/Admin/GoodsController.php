@@ -18,8 +18,12 @@ class GoodsController extends Controller
 
     public function list()
     {
-        $list = Goods::orderBy('id','desc')->get();
-        return response()->json($list);
+        $lists = Goods::orderBy('id','desc')->get();
+        foreach ($lists as $key => $val)
+        {
+             $lists[$key]['goods_cat_name'] = $lists[$key]->goods_cats->goods_cat_name;
+        }
+        return response()->json($lists);
     }
     public function add ()
     {

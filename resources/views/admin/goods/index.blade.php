@@ -35,7 +35,7 @@
                     width: '100px',
                     align: 'center',
                 },{
-                    field: 'sort',
+                    field: 'goods_cat_name',
                     title: '商品类型',
                     align: 'center',
                     width: '100px',
