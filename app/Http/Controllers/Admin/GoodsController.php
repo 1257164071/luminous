@@ -97,4 +97,11 @@ class GoodsController extends Controller
 
     }
 
+    public function destroy(Goods $goods)
+    {
+        $goods->delete();
+        session()->flash('success', '删除成功');
+        return redirect()->route('goods.index');
+    }
+
 }
