@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Index;
 
+use App\Models\Carousel;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 

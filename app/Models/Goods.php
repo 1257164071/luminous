@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use App\Models\GoodsCat;
+/** @mixin \Eloquent */
 
 class Goods extends Model
 {
