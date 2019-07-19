@@ -15,7 +15,7 @@ class CreateGoodsTable extends Migration
     {
         Schema::create('goods', function (Blueprint $table) {
             $table->Increments('id');
-            $table->integer('goods_cats_id')->comment('关联商品分类表');
+            $table->integer('goods_cats_id')->comment('关联商品分类表')->index();
             $table->string('goods_name');
             $table->integer('goods_stars')->nullable();
             $table->decimal('goods_price');
