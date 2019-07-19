@@ -16,6 +16,11 @@ class GoodsController extends Controller
         return view('admin/goods/index');
     }
 
+    public function list()
+    {
+        $list = Goods::orderBy('id','desc')->get();
+        return response()->json($list);
+    }
     public function add ()
     {
         $goodsCats = GoodsCat::all();
@@ -49,8 +54,10 @@ class GoodsController extends Controller
         if($path != null){
             $validate['goods_index_img'] = $path;
         }
-        Goods::create($validate);
+
+        GoodsCat::find($validate['goods_cats_id'])->goods()->create($validate);
         session()->flash('success','添加成功');
         return redirect()->route('goods.index');
     }
+
 }
