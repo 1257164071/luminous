@@ -88,7 +88,7 @@
 <!-- thm custom script -->
 <script src="static/js/custom.js"></script>
 
-
+@yield('script')
 
 </body>
 </html>

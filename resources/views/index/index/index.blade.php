@@ -416,7 +416,7 @@
                            <span>Leave your information here and get reply from our expert in 24 hours, don’t hesitate to ask.</span>
                        </div>
                        <div class="appointment">
-                            <form class="appointment-form">
+                            <form class="appointment-form" action="" method="POST">
                                 <div class="row">
                                     <div class="col-xl-12">
                                         <div class="single-box">
@@ -436,12 +436,7 @@
                                         <div class="single-box">
                                             <select class="selectpicker" data-width="100%">
                                                 <option selected="selected">Interested In</option>
-                                                <option>Concept Designs</option>
-                                                <option>Project Designs</option>
-                                                <option>Make Overs</option>
                                                 <option>Consulting</option>
-                                                <option>Glass & Wrought</option>
-                                                <option>Space Planning</option>
                                             </select>
                                         </div>
                                     </div>
