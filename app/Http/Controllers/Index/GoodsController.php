@@ -17,7 +17,7 @@ class GoodsController extends Controller
         $goods_name = $request->goods_name;
 
         if($goods_name != null){
-            $where[] = ['goods_name','=',$goods_name];
+            $where[] = ['goods_name','like','%'.$goods_name.'%'];
         }
         if($request->goods_cat_id == null){
             $goods = Goods::orderBy('goods_stars','desc')->where($where)->paginate(9);
