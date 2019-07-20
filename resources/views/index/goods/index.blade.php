@@ -117,13 +117,13 @@
                                         <div class="overlay-style-one">
                                             <div class="box">
                                                 <div class="content">
-                                                    <a href="#"><span class="icon-link"></span></a>
+                                                    <a href="{{ route('goods_info') }}?goods_id={{ $rand_good->id }}"><span class="icon-link"></span></a>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="title-holder">
-                                        <h5 class="post-title"><a href="#">{{ $rand_good->goods_name }}</a></h5>
+                                        <h5 class="post-title"><a href="{{ route('goods_info') }}?goods_id={{ $rand_good->id }}">{{ $rand_good->goods_name }}</a></h5>
                                         <span>${{ $rand_good->goods_price }}</span>
                                     </div>
                                 </li>

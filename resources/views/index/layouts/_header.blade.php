@@ -57,9 +57,9 @@
                     <div class="seach-toggle"><i class="fa fa-search"></i></div>
                     <ul class="search-box">
                         <li>
-                            <form method="post" action="index.html">
+                            <form method="GET" action="{{ route('index.goods') }}">
                                 <div class="form-group">
-                                    <input type="search" name="search" placeholder="Search Here" required>
+                                    <input type="search" name="goods_name" placeholder="Search Here" required>
                                     <button type="submit"><i class="fa fa-search"></i></button>
                                 </div>
                             </form>
