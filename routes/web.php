@@ -15,6 +15,7 @@ Route::group(['namespace' => 'Index'], function (){
     Route::get('/', 'IndexController@index')->name('index.home');
 
     Route::get('goods', 'GoodsController@index')->name('index.goods');
+    Route::get('goods_info', 'GoodsController@info')->name('goods_info');
 
     Route::get('about', 'AboutController@index')->name('index.about');
 });

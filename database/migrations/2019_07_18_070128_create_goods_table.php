@@ -19,7 +19,8 @@ class CreateGoodsTable extends Migration
             $table->string('goods_name');
             $table->integer('goods_stars')->nullable();
             $table->decimal('goods_price');
-            $table->text('goods_detail');
+            $table->text('goods_introduce');
+            $table->string('goods_detail',500);
             $table->string('goods_index_img');
             $table->timestamps();
         });

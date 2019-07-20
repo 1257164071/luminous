@@ -30,4 +30,15 @@ class GoodsController extends Controller
 
         return view('index.goods.index', compact('goods', 'goods_cats', 'goods_name', 'rand_goods'));
     }
+
+    public function info(Request $request)
+    {
+        if($request->exists('goods_id') == false){
+            return redirect()->back();
+        }
+        $goods = Goods::find($request->goods_id);
+        $like_goods = $goods->goods_cats->goods()->orderBy(\DB::raw('RAND()'))->take(3)->get();
+
+        return view('index.goods.info',compact('goods', 'like_goods'));
+    }
 }
